@@ -1,0 +1,79 @@
+body{
+    font-family: sans-serif;
+    text-align: center;
+}
+
+table{
+    background-color: bisque;
+    border: 1px solid;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    margin-top: 10px;
+}
+
+.employee_row{
+    background-color: white;
+    height: 30px;
+}
+.save_container{
+    background-color: bisque;
+    border: 1px solid;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    padding: 10px;
+    width: 500px
+
+}
+
+.save_container div{
+    padding: 5px;
+}
+
+button{
+    border: none;
+    border-radius: 5px;
+}
+
+button a{
+    text-decoration: none;
+    color: black;
+}
+button:hover > a{
+    color: white;
+}
+.delete_button{
+    background-color: coral;
+
+}
+
+.delete_button:hover{
+    background-color: darkred;
+}
+
+.edit_button{
+    background-color: deepskyblue;
+}
+
+.edit_button:hover{
+    background-color: cornflowerblue;
+}
+
+.submit_employee{
+    background-color: lightgreen;
+    border: none;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.submit_employee:hover{
+    background-color: darkseagreen;
+    border: none;
+    cursor: pointer;
+
+}
+.select_container{
+    margin-right: auto;
+    margin-left: 0;
+}

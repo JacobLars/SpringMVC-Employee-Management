@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title>Emloyee page</title>
+        <link th:href="@{../main.css}" rel="stylesheet" />
+    </head>
+
+    <body>
+        <table>
+            <div class="select_container">
+                <label>Department:</label><br>
+                <select name="department" onchange="location = '/employees/department?department=' + this.value;">
+                    <option value="">All</option>
+                    <th:block th:each="dept : ${departments}">
+                        <option th:value="${dept}" th:text="${dept}"></option>
+                    </th:block>
+                </select><br>
+            </div>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Department</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+            <th:block th:each="employee : ${employeeList}">
+                <tr class="employee_row">
+                    <td th:text="${employee.id}"></td>
+                    <td th:text="${employee.name}"></td>
+                    <td th:text="${employee.age}"></td>
+                    <td th:text="${employee.department}"></td>
+                    <td>
+                        <button class="delete_button"><a th:href="@{'/employees/delete/' + ${employee.id}}">Delete</a></button>
+                        <button class="edit_button"><a th:href="@{'/employees/edit/' + ${employee.id}}">Edit</a></button>
+                    </td>
+                </tr>
+            </th:block>
+
+        </tbody>
+
+    </table>
+    <div class="save_container">
+        <h3>Add Employee</h3>
+        <form th:action="@{'/employees/save'}" method="post" th:object="${employee}">
+
+            <div>
+                <label>Name:</label><br>
+                <input type="text" th:field="*{name}"><br>
+            </div>
+            <div>
+                <label>Age:</label><br>
+                <input type="number" th:field="*{age}"><br>
+            </div>
+
+            <div>
+                <label>Department:</label><br>
+                <input type="text" th:field="*{department}"><br>
+            </div>
+
+            <input class="submit_employee" type="submit" value="Submit">
+        </form> 
+    </div>
+</body>
+</html>
